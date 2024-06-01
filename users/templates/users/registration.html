@@ -5,42 +5,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
     <link rel="stylesheet" href="{% static 'users/css/registration.css'%}">
     <title>Document</title>
 </head>
 <body>
-    <form action="/users/register" method="post">
-        <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="first_name" required><br>
-    
-        <label for="last_name">Last Name</label>
-        <input type="text" id="last_name" name="last_name" required><br>
-    
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required><br>
-    
-        <label for="country">Country</label>
-        {% get_countries as countries %}
-        <select name="country">
-            {% for country in countries %}
-                <option value="{{ country.code }}">{{ country.name }}</option>
-            {% endfor %}
-        </select>
-        <br>
-
-        <label for="password1">Password</label>
-        <input type="password" id="password1" name="password1" required><br>
-
-        <label for="password2">Confirm Password</label>
-        <input type="password" id="password2" name="password2" required><br>
-    
-        <label>Role</label><br>
-        <input type="radio" id="client" name="role" value="client" required>
-        <label for="client">Client</label><br>
-        <input type="radio" id="freelancer" name="role" value="freelancer" required>
-        <label for="freelancer">Freelancer</label><br>
-    
-        <input type="submit" value="Submit">
+    <form action="/users/register" method="post" class="center-form">
+        <p>Join as a client or freelancer</p>
+        <div class="radio-group">
+            <div class="client-button">
+                <input type="radio" id="client" name="role" value="client" required>
+                <label for="client"> I'm a Client</label>
+            </div>
+            <div class="freelancer-button">
+                <input type="radio" id="freelancer" name="role" value="freelancer" required>
+                <label for="freelancer">I'm a Freelancer</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="first-name" for="first_name">First Name</label><br>
+            <input class="first-name-input" type="text" id="first_name" name="first_name" required>
+        </div>
+        <div class="form-group">
+            <label class="last-name" for="last_name">Last Name</label><br>
+            <input class="last-name-input" type="text" id="last_name" name="last_name" required>
+        </div>
+        <div class="form-group">
+            <label class="email" for="email">Email</label><br>
+            <input class="email-input" type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label class="country" for="country">Country</label><br>
+            {% get_countries as countries %}
+            <select class="country-input" name="country" id="country">
+                {% for country in countries %}
+                    <option value="{{ country.code }}">{{ country.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="password1" for="password1">Password</label><br>
+            <input class="password1-input" type="password" id="password1" name="password1" required>
+        </div>
+        <div class="form-group">
+            <label class="password2" for="password2">Confirm Password</label><br>
+            <input class="password2-input" type="password" id="password2" name="password2" required>
+        </div>
+        <input class="submit-button" type="submit" value="Create My Account">
     </form>
+    
 </body>
 </html>
