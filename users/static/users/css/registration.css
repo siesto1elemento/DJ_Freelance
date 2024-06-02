@@ -7,7 +7,7 @@
 .center-form{
     display: block;
     margin-left:30%;
-    margin-top: 10%;
+    margin-top: 7%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -19,25 +19,30 @@ p{
 
 .radio-group{
     display: flex;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     
 }
 
 .client-button{
     margin-right:60px;
-    border: 5px solid black;
+    border: 3px solid black;
     border-radius: 5px;
-    padding: 50px;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 50px;
+    padding-bottom: 50px;
     font-size: x-large;
     font-weight: 300;
 }
 
 .freelancer-button{
-    border: 5px solid black;
+    border: 3px solid black;
     border-radius: 5px;
-
-    padding: 50px;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 50px;
+    padding-bottom: 50px;
     font-size: x-large;
     font-weight: 300;
 
@@ -48,7 +53,7 @@ input[type='radio'] {
     }
 
 .first-name, .last-name, .email, .country, .password1, .password2 {
-    font-size: x-large;
+    font-size: large;
     display: inline-block;
     margin-bottom: 10px;
     font-weight:100;
@@ -57,7 +62,9 @@ input[type='radio'] {
 
 .first-name-input, .last-name-input, .email-input, .country-input, .password1-input, .password2-input{
     width:625px;
-    height: 30px
+    height: 35px;
+    font-size: 15px;
+    padding-left: 5px;
 }
 
 .country-input{
@@ -77,6 +84,15 @@ input[type='radio'] {
     background-color: black;
     border: 2px solid white
 }
+
+.submit-button:hover{
+    cursor: pointer;
+}
+
+.login-password{
+    margin-top:20px;
+}
+
 
 
 

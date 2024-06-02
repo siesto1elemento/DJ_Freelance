@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse,redirect
 from .models import CustomUser
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth import authenticate
+from django.contrib.auth import login
+from django.contrib.auth import logout
 
 @csrf_exempt
 def register(request):
@@ -36,11 +39,36 @@ def register(request):
         new_profile.set_password(password1)
         new_profile.save()
 
+        user = authenticate(username=email,password=password1)
+        if user is not None:
+            login(request, user)
 
 
 
-        return render(request,"users/registration.html")
+        return render(request,"users/login.html")
 
     else:
         return render(request,"users/registration.html")
     
+
+@csrf_exempt
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('email')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username,password=password)
+        if user is not None:
+            login(request, user)
+
+
+        return HttpResponse("you are authenticated")
+    
+    else:
+        return render(request, "users/login.html")
+    
+
+@csrf_exempt
+def user_logout(request):
+    logout(request)
+    return redirect('register')
