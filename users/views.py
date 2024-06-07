@@ -4,6 +4,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
+
 
 @csrf_exempt
 def register(request):
@@ -62,7 +64,7 @@ def user_login(request):
             login(request, user)
 
 
-        return HttpResponse("you are authenticated")
+        return redirect('freelancer_view')
     
     else:
         return render(request, "users/login.html")
@@ -72,3 +74,8 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('register')
+
+
+
+
+

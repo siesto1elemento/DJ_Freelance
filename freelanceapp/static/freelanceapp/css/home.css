@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    
+}
+.header-right{
+    margin-top: 15px;
+}
+
+.company-name{
+    margin-right:30px;
+    font-size:xx-large;
+    letter-spacing: 1px;
+}
+.work-link{
+    margin-right:20px;
+    text-decoration: none;
+    color: black;
+}
+
+.job-link{
+    
+    text-decoration: none;
+    color: black;
+}
+
+.login-link-header{
+    text-decoration: none;
+    color: black; 
+}
+
+.sign-up-link-header{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(61, 147, 70);
+    margin-left:20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.content{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.content-text-large{
+    font-weight: bold;
+    font-size: 70px;
+    color: rgb(80, 188, 91);
+    letter-spacing: 0.24px;
+}
+.content-text-small{
+    font-size: x-large;
+    font-weight: normal;
+    margin-top: 50px;
+    color: rgb(68, 66, 66);
+    line-height: 35px;
+    letter-spacing: 0.24px;
+
+}
+.content-button{
+    margin-top: 3%;
+    margin-left: 10%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color : white;
+    background-color: rgb(53, 126, 60);
+    border:0px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: large;
+}

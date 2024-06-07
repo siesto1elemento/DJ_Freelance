@@ -1,11 +1,38 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'freelanceapp/css/home.css'%}">
 </head>
 <body>
-    hello
+    <div class="header">
+        <div class="header-left">
+            <span class="company-name">Frilans</span>
+            <a href="" class="work-link">Find Work</a>
+            <a href="" class="job-link">Post a Job</a>
+        </div>
+        <div class="header-right">
+            <a href="/users/login" class="login-link-header">Login</a>
+            <a href="/users/register" class="sign-up-link-header">Sign up</a>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="content-text">
+            <p class="content-text-large" >Where Freelancing Dreams <br> Take Flight!</p>
+            <p class="content-text-small">Forget the old rules. You can have the <br>
+            best people. Right now. Right here.</p>
+        </div>
+        <div class="content-image">
+            <img src="static\freelanceapp\images\searching-talent@1x.webp" alt="" height="370px" width="500px">
+        </div>
+     
+    </div>
+    <a href="/users/register">
+    <button class="content-button">Get started</button>
+    </a>
 </body>
 </html>
