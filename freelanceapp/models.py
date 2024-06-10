@@ -25,6 +25,9 @@ class Client(models.Model):
 
 class Freelancer(models.Model):
     freelancer = models.OneToOneField(CustomUser,on_delete=models.CASCADE)
+    job_title = models.TextField()
+    hourly_rate = models.PositiveIntegerField()
+    job_description = models.TextField()
     phone_number = PhoneNumberField(null=False, blank=False, unique=True)
     address = models.TextField()
     TIMEZONES = tuple(zip(pytz.all_timezones, pytz.all_timezones))
@@ -39,5 +42,6 @@ class Freelancer(models.Model):
         ]
     )
     
+
 
 

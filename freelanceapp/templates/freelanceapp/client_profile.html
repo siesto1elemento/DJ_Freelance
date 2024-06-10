@@ -1,0 +1,51 @@
+{% load static %}
+{% load countries %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="{% static 'users/css/registration.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" class="center-form">
+        {% csrf_token %}
+        <p>Complete your profile</p>
+        <div class="form-group">
+            <label class="first-name" for="company_name">Company Name</label><br>
+            <input class="first-name-input" type="text" id="company_name" name="company_name" required>
+        </div>
+        <div class="form-group">
+            <label class="last-name" for="phone_number">Phone Number</label><br>
+            <input class="last-name-input" type="number" id="phone_number" name="phone_number" required>
+        </div>
+        <div class="form-group">
+            <label class="email" for="address">Address</label><br>
+            <input class="email-input" type="" id="address" name="address" required>
+        </div>
+        <div class="form-group">
+            <label class="country" for="timezone">Timezone</label><br>
+            <select class="country-input" name="timezone" id="timezone">
+                {% for tz in timezones %}
+                    <option value="{{ tz }}">{{ tz }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- {% get_countries as countries %}
+            <select class="country-input" name="country" id="country">
+                {% for country in countries %}
+                    <option value="{{ country.code }}">{{ country.name }}</option>
+                {% endfor %}
+            </select> -->
+        </div>
+        <div class="form-group">
+            <label class="password1" for="postal_code">Postal Code</label><br>
+            <input class="password1-input" type="text" id="postal_code" name="postal_code" required>
+        </div>
+        <input class="submit-button" type="submit" value="Create My Profile">
+    </form>
+    
+</body>
+</html>
